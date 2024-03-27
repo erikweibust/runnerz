@@ -32,6 +32,9 @@ public class Application {
 		Object welcomeBean = context.getBean("welcomeMessage");
 		String welcomeMessage2 = ((WelcomeMessage) welcomeBean).getWelcomeMessage();
 		System.out.println(welcomeMessage2);
+
+		Object runRepo = context.getBean("runRepository");
+		System.out.println(runRepo);
 	}
 
 	// create test Run record to prove model out
