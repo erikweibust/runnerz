@@ -1,0 +1,89 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "runz",
+    "dateExported": "2024-03-27T18:23:48.803Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "3ee81a02-90c8-4df2-a9e2-7fbe15d2e367",
+            "colId": "df929b82-9e8d-4005-8b66-e71b34bc1bc6",
+            "containerId": "",
+            "name": "findAll",
+            "url": "localhost:8080/api/runs",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-03-27T01:54:03.890Z",
+            "modified": "2024-03-27T01:54:13.098Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3329f3de-2929-4de6-ac31-ee390b6fcc7d",
+            "colId": "df929b82-9e8d-4005-8b66-e71b34bc1bc6",
+            "containerId": "",
+            "name": "create",
+            "url": "localhost:8080/api/runs",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-03-27T01:54:36.833Z",
+            "modified": "2024-03-27T01:57:25.396Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": 3,\n  \"title\": \"Thursday Lunch Run\",\n  \"startedOn\": \"2024-03-26T20:42:32.43521\",\n  \"completedOn\": \"2024-03-26T21:42:32.435212\",\n  \"miles\": 6,\n  \"location\": \"INDOOR\"\n}\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "cd207dcd-de20-4fcd-beb5-5e8866c50347",
+            "colId": "df929b82-9e8d-4005-8b66-e71b34bc1bc6",
+            "containerId": "",
+            "name": "update",
+            "url": "localhost:8080/api/runs/1",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-03-27T01:58:17.558Z",
+            "modified": "2024-03-27T01:59:15.855Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": 1,\n  \"title\": \"Friday Evening Run\",\n  \"startedOn\": \"2024-03-26T20:42:32.43521\",\n  \"completedOn\": \"2024-03-26T21:42:32.435212\",\n  \"miles\": 6,\n  \"location\": \"INDOOR\"\n}\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "a16e1856-3a05-4fc1-9cf4-894c9747719f",
+            "colId": "df929b82-9e8d-4005-8b66-e71b34bc1bc6",
+            "containerId": "",
+            "name": "delete",
+            "url": "localhost:8080/api/runs/3",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-03-27T18:20:55.279Z",
+            "modified": "2024-03-27T18:21:59.053Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "06635c81-9ba4-4f2e-a711-df0e9a838f62",
+            "colId": "df929b82-9e8d-4005-8b66-e71b34bc1bc6",
+            "containerId": "",
+            "name": "findById",
+            "url": "localhost:8080/api/runs/1",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-03-27T18:22:20.236Z",
+            "modified": "2024-03-27T18:22:28.387Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
