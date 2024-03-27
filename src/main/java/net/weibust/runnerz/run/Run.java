@@ -8,7 +8,7 @@ import jakarta.validation.constraints.Positive;
 public record Run(
         Integer id,
 
-        @NotEmpty
+        //@NotEmpty
         String title,
         LocalDateTime startedOn,
         LocalDateTime completedOn,
@@ -21,6 +21,11 @@ public record Run(
         public Run {
                 if(!completedOn.isAfter(startedOn)) {
                         throw new IllegalArgumentException("Completed On must be after Started On");
+                }
+
+                // use this or @NotEmpty above
+                if(title.isBlank()) {
+                        throw new IllegalArgumentException("Title cannot be blank!");
                 }
         }
 
