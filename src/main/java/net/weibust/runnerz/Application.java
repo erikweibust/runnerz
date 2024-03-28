@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Bean;
 
 import net.weibust.runnerz.run.Location;
 import net.weibust.runnerz.run.Run;
+import net.weibust.runnerz.run.RunRepository;
 
 
 @SpringBootApplication
@@ -38,19 +39,32 @@ public class Application {
 	}
 
 	// create test Run record to prove model out
-	@Bean
-	CommandLineRunner runner() {
-		return args -> {
-			Run run = new Run(1,
-						"First Run",
-						LocalDateTime.now(),
-						LocalDateTime.now().plus(1, ChronoUnit.HOURS),
-						5,
-						Location.OUTDOOR);
-			log.info("Run: " + run);
-		
-		};
+	// @Bean
+	// CommandLineRunner runner(RunRepository runRepository) {
+	// 	return args -> {
+	// 		Run run = new Run(1,
+	// 					"First Run",
+	// 					LocalDateTime.now(),
+	// 					LocalDateTime.now().plus(1, ChronoUnit.HOURS),
+	// 					5,
+	// 					Location.OUTDOOR);
 
-	}
+	// 		runRepository.create(run);
+	// 	};
+
+		// Initial run; not sure where this was used; this was before In-Memory RunRepo
+		// We did not need to pass the RunRepo into the runner() for this; that was added for db
+		// version of Repo
+		// return args -> {
+		// 	Run run = new Run(1,
+		// 				"First Run",
+		// 				LocalDateTime.now(),
+		// 				LocalDateTime.now().plus(1, ChronoUnit.HOURS),
+		// 				5,
+		// 				Location.OUTDOOR);
+		// 	log.info("Run: " + run);
+		
+		// };
+	//}
 
 }
