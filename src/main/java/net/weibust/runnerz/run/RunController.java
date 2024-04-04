@@ -72,6 +72,11 @@ public class RunController {
     public List<Run> findByLocatioRuns(@PathVariable String location) {
         return runRepository.findAllByLocation(location);
     }
+
+    @GetMapping("/outdoor-runs")
+    public List<Run> findAllOutdooRuns() {
+        return runRepository.findAllOutdoorRuns();
+    }
     
 
     @GetMapping("/hello")
