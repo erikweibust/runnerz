@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @RestController
@@ -48,7 +50,7 @@ public class RunController {
     @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
     void create(@Valid @RequestBody Run run) {
-        runRepository.create(run);
+        runRepository.save(run);
 
     }
 
@@ -56,15 +58,21 @@ public class RunController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/{id}")
     void update(@Valid @RequestBody Run run, @PathVariable Integer id) {
-        runRepository.update(run, id);
+        runRepository.save(run);
     }
 
     // delete
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
     void delete(@PathVariable Integer id) {
-        runRepository.delete(id);
+        runRepository.delete(runRepository.findById(id).get());
     }
+
+    @GetMapping("/location/{location}")
+    public List<Run> findByLocatioRuns(@PathVariable String location) {
+        return runRepository.findAllByLocation(location);
+    }
+    
 
     @GetMapping("/hello")
     String home() {
